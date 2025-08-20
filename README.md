@@ -1,2 +1,0 @@
-
-# NGP DOCS
