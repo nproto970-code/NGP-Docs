@@ -1,0 +1,26 @@
+
+name: Build downloads index
+
+on:
+  push:
+    paths:
+      - "docs/downloads/**"
+      - "scripts/generate_downloads.py"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Generate downloads page
+        run: python3 scripts/generate_downloads.py
+      - name: Commit updated downloads.md
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/downloads.md
+          git commit -m "chore: update downloads index" || echo "No changes"
+          git push

@@ -1,0 +1,5 @@
+
+# See: https://docs.gitbook.com/integrations/git-sync
+structure:
+  readme: docs/index.md
+  summary: SUMMARY.md

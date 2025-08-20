@@ -1,0 +1,16 @@
+
+# OS junk
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Downloads (optional: uncomment to exclude large binaries from git)
+# docs/downloads/*
+# !docs/downloads/.keep
